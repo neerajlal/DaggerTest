@@ -12,20 +12,20 @@ import javax.inject.Inject;
  * Created by 10944 on 07-04-2018.
  */
 
-public class MainPresenterImpl implements MainPresenter {
+public class MainPresenterImpl implements MainContract.MainPresenter {
 
-    private MainView mainView;
+    private MainContract.MainView mainView;
     private ApiService apiService;
 
     @Inject
-    public MainPresenterImpl(MainView mainView, ApiService apiService) {
+    public MainPresenterImpl(MainContract.MainView mainView, ApiService apiService) {
         this.mainView = mainView;
         this.apiService = apiService;
     }
 
     @Override
     public void getData() {
-        apiService.getData(new retrofit2.Callback<IndicesResponseVO>() {
+        apiService.getNSEData(new retrofit2.Callback<IndicesResponseVO>() {
             @Override
             public void onResponse(retrofit2.Call<IndicesResponseVO> call, retrofit2.Response<IndicesResponseVO> response) {
                 IndicesResponseVO data = response.body();
@@ -47,7 +47,7 @@ public class MainPresenterImpl implements MainPresenter {
 
             @Override
             public void onFailure(retrofit2.Call<IndicesResponseVO> call, Throwable t) {
-
+                mainView.setError(t.toString());
             }
         });
     }

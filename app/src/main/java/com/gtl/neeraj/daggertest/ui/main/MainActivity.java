@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.gtl.neeraj.daggertest.R;
 
@@ -20,13 +21,16 @@ import dagger.Module;
 import dagger.android.AndroidInjection;
 
 @Module
-public class MainActivity extends AppCompatActivity implements MainView {
+public class MainActivity extends AppCompatActivity implements MainContract.MainView {
 
     @Inject
-    MainPresenter presenter;
+    MainContract.MainPresenter presenter;
 
     @BindView(R.id.listview)
     ListView listView;
+
+    @BindView(android.R.id.empty)
+    TextView emptyView;
 
     @BindView(R.id.loadMore)
     Button load;
@@ -42,9 +46,9 @@ public class MainActivity extends AppCompatActivity implements MainView {
 
         ButterKnife.bind(this);
 
+        listView.setEmptyView(emptyView);
         adapter = new NseDataAdapter(data);
         listView.setAdapter(adapter);
-        presenter.getData();
 
         load.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,6 +78,6 @@ public class MainActivity extends AppCompatActivity implements MainView {
 
     @Override
     public void setError(String error) {
-
+        emptyView.setText(getString(R.string.error));
     }
 }

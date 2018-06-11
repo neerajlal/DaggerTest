@@ -21,14 +21,25 @@ public class ApiService {
     public ApiService() {
     }
 
-    public void getData(Callback<IndicesResponseVO> callback) {
+    public void getNSEData(Callback<IndicesResponseVO> callback) {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(RequestService.BASE_URL)
+                .baseUrl(RequestService.NSE_BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
         RequestService service = retrofit.create(RequestService.class);
         Call<IndicesResponseVO> data = service.getIndices();
+        data.enqueue(callback);
+    }
+
+    public void getBSEData(Callback<String> callback) {
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(RequestService.BSE_BASE_URL)
+                .addConverterFactory(new ToStringConverterFactory())
+                .build();
+
+        RequestService service = retrofit.create(RequestService.class);
+        Call<String> data = service.getFlagData();
         data.enqueue(callback);
     }
 

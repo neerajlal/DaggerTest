@@ -2,7 +2,6 @@ package com.gtl.neeraj.daggertest;
 
 import com.gtl.neeraj.daggertest.network.ApiService;
 import com.gtl.neeraj.daggertest.ui.main.MainPresenterImpl;
-import com.gtl.neeraj.daggertest.ui.main.MainView;
 
 import org.junit.Before;
 import org.junit.Test;

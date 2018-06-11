@@ -13,12 +13,12 @@ import dagger.Provides;
 public class MainActivityModule {
 
     @Provides
-    MainView provideMainView(MainActivity activity) {
+    MainContract.MainView provideMainView(MainActivity activity) {
         return activity;
     }
 
     @Provides
-    MainPresenter provideMainPresenter(MainView view, ApiService service) {
+    MainContract.MainPresenter provideMainPresenter(MainContract.MainView view, ApiService service) {
         return new MainPresenterImpl(view, service);
     }
 
