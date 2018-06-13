@@ -1,4 +1,4 @@
-package com.gtl.neeraj.daggertest.ui.main;
+package com.gtl.neeraj.daggertest.ui.nse;
 
 import android.view.LayoutInflater;
 import android.view.View;

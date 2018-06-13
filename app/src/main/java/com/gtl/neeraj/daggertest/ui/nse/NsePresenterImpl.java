@@ -1,4 +1,4 @@
-package com.gtl.neeraj.daggertest.ui.main;
+package com.gtl.neeraj.daggertest.ui.nse;
 
 import com.gtl.neeraj.daggertest.network.ApiService;
 import com.gtl.neeraj.daggertest.network.models.IndicesResponseVO;
@@ -12,13 +12,13 @@ import javax.inject.Inject;
  * Created by 10944 on 07-04-2018.
  */
 
-public class MainPresenterImpl implements MainContract.MainPresenter {
+public class NsePresenterImpl implements NseContract.MainPresenter {
 
-    private MainContract.MainView mainView;
+    private NseContract.MainView mainView;
     private ApiService apiService;
 
     @Inject
-    public MainPresenterImpl(MainContract.MainView mainView, ApiService apiService) {
+    public NsePresenterImpl(NseContract.MainView mainView, ApiService apiService) {
         this.mainView = mainView;
         this.apiService = apiService;
     }

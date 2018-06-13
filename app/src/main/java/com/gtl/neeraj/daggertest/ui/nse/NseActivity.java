@@ -1,4 +1,4 @@
-package com.gtl.neeraj.daggertest.ui.main;
+package com.gtl.neeraj.daggertest.ui.nse;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -21,10 +21,10 @@ import dagger.Module;
 import dagger.android.AndroidInjection;
 
 @Module
-public class MainActivity extends AppCompatActivity implements MainContract.MainView {
+public class NseActivity extends AppCompatActivity implements NseContract.MainView {
 
     @Inject
-    MainContract.MainPresenter presenter;
+    NseContract.MainPresenter presenter;
 
     @BindView(R.id.listview)
     ListView listView;

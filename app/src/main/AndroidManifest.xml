@@ -13,10 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".ui.main.MainActivity"/>
+        <activity android:name=".ui.nse.NseActivity"/>
 
         <activity
-            android:name=".ui.main2.ScrollingActivity"
+            android:name=".ui.bse.BseActivity"
             android:parentActivityName=".ui.starter.StarterActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
 

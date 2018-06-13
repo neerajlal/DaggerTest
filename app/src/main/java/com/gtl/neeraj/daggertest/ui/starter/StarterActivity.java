@@ -7,8 +7,8 @@ import android.view.View;
 import android.widget.Button;
 
 import com.gtl.neeraj.daggertest.R;
-import com.gtl.neeraj.daggertest.ui.main.MainActivity;
-import com.gtl.neeraj.daggertest.ui.main2.ScrollingActivity;
+import com.gtl.neeraj.daggertest.ui.nse.NseActivity;
+import com.gtl.neeraj.daggertest.ui.bse.BseActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -45,12 +45,12 @@ public class StarterActivity extends AppCompatActivity {
     }
 
     public void gotoNSE() {
-        Intent intent = new Intent(StarterActivity.this, MainActivity.class);
+        Intent intent = new Intent(StarterActivity.this, NseActivity.class);
         startActivity(intent);
     }
 
     public void gotoBSE() {
-        Intent intent = new Intent(StarterActivity.this, ScrollingActivity.class);
+        Intent intent = new Intent(StarterActivity.this, BseActivity.class);
         startActivity(intent);
     }
 }

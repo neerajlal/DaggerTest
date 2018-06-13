@@ -1,7 +1,7 @@
 package com.gtl.neeraj.daggertest;
 
 import com.gtl.neeraj.daggertest.network.ApiService;
-import com.gtl.neeraj.daggertest.ui.main.MainPresenterImpl;
+import com.gtl.neeraj.daggertest.ui.nse.NsePresenterImpl;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -19,7 +19,7 @@ import static org.mockito.Mockito.verify;
 //@RunWith(MockitoJUnitRunner.class)
 public class MainPresenterTest {
 
-    private MainPresenterImpl presenter;
+    private NsePresenterImpl presenter;
 
     @Mock
     private MainView view;
@@ -40,7 +40,7 @@ public class MainPresenterTest {
         // To inject the mocks in the test the initMocks method needs to be called.
         MockitoAnnotations.initMocks(this);
 
-        presenter = new MainPresenterImpl(view, api);
+        presenter = new NsePresenterImpl(view, api);
     }
 
     @Test

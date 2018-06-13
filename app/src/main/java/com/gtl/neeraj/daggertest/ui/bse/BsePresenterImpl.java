@@ -1,4 +1,4 @@
-package com.gtl.neeraj.daggertest.ui.main2;
+package com.gtl.neeraj.daggertest.ui.bse;
 
 import com.gtl.neeraj.daggertest.network.ApiService;
 

@@ -1,4 +1,4 @@
-package com.gtl.neeraj.daggertest.ui.main2;
+package com.gtl.neeraj.daggertest.ui.bse;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -18,7 +18,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class ScrollingActivity extends AppCompatActivity implements BseContract.View {
+public class BseActivity extends AppCompatActivity implements BseContract.View {
 
     @BindView(R.id.listView)
     ListView listView;

@@ -3,7 +3,7 @@ package com.gtl.neeraj.daggertest;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 
-import com.gtl.neeraj.daggertest.ui.main.MainActivity;
+import com.gtl.neeraj.daggertest.ui.nse.NseActivity;
 
 import org.junit.Rule;
 import org.junit.Test;
@@ -23,7 +23,7 @@ import static android.support.test.espresso.matcher.ViewMatchers.withId;
 public class MainActivtyScreenTest {
 
     @Rule
-    public ActivityTestRule<MainActivity> mainActivityTestRule = new ActivityTestRule<>(MainActivity.class);
+    public ActivityTestRule<NseActivity> mainActivityTestRule = new ActivityTestRule<>(NseActivity.class);
 
     @Test
     public void clickLoadMoreButton_moreDataAdded() {

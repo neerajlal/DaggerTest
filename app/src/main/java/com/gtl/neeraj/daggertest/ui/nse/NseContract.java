@@ -1,8 +1,8 @@
-package com.gtl.neeraj.daggertest.ui.main;
+package com.gtl.neeraj.daggertest.ui.nse;
 
 import java.util.Map;
 
-public interface MainContract {
+public interface NseContract {
 
     public interface MainPresenter {
 
