@@ -1,5 +1,7 @@
 package com.gtl.neeraj.daggertest.di;
 
+import com.gtl.neeraj.daggertest.ui.bse.BseActivity;
+import com.gtl.neeraj.daggertest.ui.bse.BseActivityModule;
 import com.gtl.neeraj.daggertest.ui.nse.NseActivity;
 import com.gtl.neeraj.daggertest.ui.nse.NseActivityModule;
 
@@ -14,6 +16,9 @@ import dagger.android.ContributesAndroidInjector;
 public abstract class ActivityBuilder {
 
     @ContributesAndroidInjector(modules = {NseActivityModule.class})
-    abstract NseActivity bindMainActivity();
+    abstract NseActivity bindNseActivity();
+
+    @ContributesAndroidInjector(modules = {BseActivityModule.class})
+    abstract BseActivity bindBseActivity();
 
 }

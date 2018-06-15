@@ -4,14 +4,14 @@ import java.util.Map;
 
 public interface NseContract {
 
-    public interface MainPresenter {
+    interface MainPresenter {
 
         void getData();
 
     }
 
 
-    public interface MainView {
+    interface MainView {
 
         void setData(Map<String, String> data);
 

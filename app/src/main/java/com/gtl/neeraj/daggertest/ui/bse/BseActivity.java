@@ -10,15 +10,20 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.gtl.neeraj.daggertest.R;
-import com.gtl.neeraj.daggertest.network.ApiService;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Inject;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import dagger.android.AndroidInjection;
 
 public class BseActivity extends AppCompatActivity implements BseContract.View {
+
+    @Inject
+    BsePresenterImpl presenter;
 
     @BindView(R.id.listView)
     ListView listView;
@@ -35,10 +40,9 @@ public class BseActivity extends AppCompatActivity implements BseContract.View {
     private List<BseDataAdapter.Model> data = new ArrayList<>();
     private BseDataAdapter adapter;
 
-    private BsePresenterImpl presenter;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        AndroidInjection.inject(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scrolling);
 
@@ -50,7 +54,6 @@ public class BseActivity extends AppCompatActivity implements BseContract.View {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
-        presenter = new BsePresenterImpl(this, new ApiService());
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

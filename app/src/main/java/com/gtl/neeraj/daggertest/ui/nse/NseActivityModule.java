@@ -13,12 +13,12 @@ import dagger.Provides;
 public class NseActivityModule {
 
     @Provides
-    NseContract.MainView provideMainView(NseActivity activity) {
+    NseContract.MainView provideNseView(NseActivity activity) {
         return activity;
     }
 
     @Provides
-    NseContract.MainPresenter provideMainPresenter(NseContract.MainView view, ApiService service) {
+    NseContract.MainPresenter provideNsePresenter(NseContract.MainView view, ApiService service) {
         return new NsePresenterImpl(view, service);
     }
 
